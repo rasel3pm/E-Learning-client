@@ -43,11 +43,10 @@ const LatestBlog = () => {
                   </Link>
                   <p>{blog.description.substring(0, 70)}</p>
                   <div className="card-actions justify-end">
-                    <Link
-                      to={`/blogs/${blog._id}`}
-                      className="btn btn-success btn-sm"
-                    >
-                      Read More
+                    <Link to={`/blogs/${blog._id}`}>
+                      <button class="transition hover:duration-400 hover:bg-blue-500 text-white p-1 hover:text-white border border-blue-500 hover:border-transparent rounded">
+                        Details
+                      </button>
                     </Link>
                   </div>
                 </div>

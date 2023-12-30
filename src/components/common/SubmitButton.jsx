@@ -12,7 +12,7 @@ const SubmitButton = (props) => {
         <span className="pr-2">
           <Spinner color="info" size="md" />
         </span>
-        Sending...
+        Procassing...
       </button>
     );
   }

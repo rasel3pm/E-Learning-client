@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { COURSE_DETAILS_API_REQUEST } from "../../apiRequest/API";
+import {
+  COURSE_DETAILS_API_REQUEST,
+  ENROLL_COURSE_API_REQUEST,
+} from "../../apiRequest/API";
 import Loading from "../common/Loader";
 import AccordionComponent from "./Accordion";
+import SubmitButton from "../common/SubmitButton";
 
 const CourseDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [courseInfo, setCourseInfo] = useState([]);
+  const [btnLoader, setBtnLoader] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -16,8 +21,11 @@ const CourseDetails = () => {
     })();
   }, [id]);
 
-  const handleEnrollCourse = () => {
-    navigate("/enroll-success");
+  const handleEnrollCourse = async () => {
+    setBtnLoader(true);
+    await ENROLL_COURSE_API_REQUEST(id);
+    setBtnLoader(false);
+    navigate("/profile");
   };
 
   return (
@@ -101,12 +109,12 @@ const CourseDetails = () => {
                     </h1>
 
                     <div className="mx-5 mb-5">
-                      <button
+                      <SubmitButton
                         onClick={handleEnrollCourse}
+                        submit={btnLoader}
+                        text="Enroll Now"
                         className="btn bg-green-300 border-none text-white text-bold text-lg w-full"
-                      >
-                        Enroll Now
-                      </button>
+                      />
                     </div>
 
                     <div className="mx-10 mb-8 mt-7 text-[15px] text-gray-800">

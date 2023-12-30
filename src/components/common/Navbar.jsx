@@ -4,6 +4,7 @@ import { RiCloseFill, RiMenu2Fill } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 import { getToken, removeSession } from "../../utility/SessionHelper";
 import logo from "./../../assets/Frame.svg";
+import DropDownMenu from "../account/DropDownMenu";
 
 const menuItems = [
   {
@@ -65,27 +66,7 @@ export function Navbar() {
             <div className="flex md:gap-5 gap-2 items-center">
               {getToken() ? (
                 <>
-                  <NavLink
-                    to="/my-course"
-                    className={({ isActive }) =>
-                      isActive
-                        ? " bg-green-200 px-2 py-1 rounded text-white hover:text-green-500"
-                        : " text-gray-800 hover:text-green-500"
-                    }
-                  >
-                    My Course
-                  </NavLink>
-
-                  <NavLink
-                    to="/profile"
-                    className={({ isActive }) =>
-                      isActive
-                        ? " bg-green-200 px-5 py-1 rounded text-white hover:text-green-500"
-                        : "px-2 hover:text-green-500"
-                    }
-                  >
-                    <CgProfile size={25} />
-                  </NavLink>
+                  <DropDownMenu />
                   <span
                     onClick={handleLogout}
                     className="text-gray-800 hover:text-green-500 cursor-pointer"

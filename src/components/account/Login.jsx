@@ -40,12 +40,12 @@ const Login = () => {
     }
   };
   return (
-    <div className="w-screen h-[100vh] bg-[#F5F2EB] flex items-center justify-center ">
+    <div className="md:w-screen md:h-[100vh] py-10 px-10 bg-[#F5F2EB] flex items-center justify-center ">
       {isLoading ? (
         <Loading />
       ) : (
         <div
-          className="bg-slate-200 text-black rounded-3xl shadow-xl w-full overflow-hidden"
+          className="bg-slate-200 text-black mt-10 md:mt-20 rounded-3xl shadow-xl w-full overflow-hidden"
           style={{ maxWidth: "1000px" }}
         >
           <div className="md:flex w-full">
@@ -54,7 +54,9 @@ const Login = () => {
             </div>
             <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
               <div className="text-center mb-10">
-                <h2 className="font-bold text-3xl text-gray-900">LOGIN</h2>
+                <div className="divider  divider-info text-3xl text-gray-900">
+                  LOGIN
+                </div>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className="flex -mx-3">

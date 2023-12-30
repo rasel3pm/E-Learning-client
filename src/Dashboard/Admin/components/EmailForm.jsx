@@ -28,14 +28,7 @@ const EmailForm = () => {
       await SEND_EMAIL_API_REQUEST(recipients, subject, text);
       setBtnLoader(false);
     }
-    // try {
-
-    // } catch (error) {
-    //   console.error("Error sending emails:", error);
-    //   alert("Error sending emails. Please try again.");
-    // }
   };
-  console.log(text, subject);
   return (
     <div className="md:px-32">
       <TextInput

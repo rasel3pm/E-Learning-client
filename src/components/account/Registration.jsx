@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { MdDriveFileRenameOutline, MdEmail, MdOutlinePassword } from "react-icons/md";
+import {
+  MdDriveFileRenameOutline,
+  MdEmail,
+  MdOutlinePassword,
+} from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorToast, IsEmpty } from "../../utility/FormHelper";
 import { REGISTRATION_API } from "./../../apiRequest/API.js";
@@ -40,17 +44,20 @@ const Registration = () => {
   };
 
   return (
-    <div className="w-screen h-[100vh] bg-[#F5F2EB] flex items-center justify-center">
+    <div className="md:w-screen md:h-[100vh] py-20 bg-[#F5F2EB] px-10 flex items-center justify-center">
       <div
-        className="bg-slate-200 text-black rounded-3xl shadow-xl w-full overflow-hidden"
-        style={{ maxWidth: "1000px" }}>
+        className="bg-slate-200 text-black rounded-3xl md:mt-20 shadow-xl w-full overflow-hidden"
+        style={{ maxWidth: "1000px" }}
+      >
         <div className="md:flex w-full">
           <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
             <img src={signup} alt="Sign Up" className="h-auto w-full" />
           </div>
           <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
             <div className="text-center mb-10">
-              <h2 className="font-bold text-3xl text-gray-900">REGISTER</h2>
+              <div className="divider  divider-info text-3xl text-gray-900">
+                REGISTER
+              </div>
             </div>
             <form onSubmit={handleSubmit}>
               <div className="flex -mx-3">
@@ -117,7 +124,8 @@ const Registration = () => {
               <div className="text-center">
                 <Link
                   to="/login"
-                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800">
+                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                >
                   Already have an account? Login!
                 </Link>
               </div>
