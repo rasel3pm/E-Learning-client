@@ -3,8 +3,8 @@ import { ErrorToast, SuccessToast } from "../utility/FormHelper";
 import { getToken, setToken, setUserDetails } from "../utility/SessionHelper";
 
 // const BASE_URL = `https://edujar-lms-server.onrender.com/api/v1`;
-// const BASE_URL = `https://e-learning-server-three.vercel.app/api/v1`;
-const BASE_URL = `http://localhost:8000/api/v1`;
+const BASE_URL = `https://e-learning-server-three.vercel.app/api/v1`;
+// const BASE_URL = `http://localhost:8000/api/v1`;
 const Headers = { headers: { token: getToken() } };
 
 // ::::::::: API: REGISTRATION API :::::::::
@@ -194,6 +194,20 @@ export const ENROLL_COURSE_API_REQUEST = async (courseId) => {
 export const GET_ENROLL_COURSE_API_REQUEST = async () => {
   try {
     const { data } = await axios.get(`${BASE_URL}/enroll-course-info`, Headers);
+    if (data.success) {
+      return data.data;
+    }
+  } catch (error) {
+    return [];
+  }
+};
+// ::::::::: API: Get user details :::::::::
+export const GET_ENROLLD_MODULE_API_REQUEST = async (courseId) => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}/get-single-module/${courseId}`,
+      Headers
+    );
     if (data.success) {
       return data.data;
     }

@@ -10,7 +10,6 @@ const MyCourse = () => {
       setEnrollCourses(result);
     })();
   }, []);
-  console.log(enrollCourses);
 
   return (
     <div>
@@ -41,7 +40,7 @@ const MyCourse = () => {
                     {enrollCourse?.course.title}
                   </h2>
                   <div className="card-actions">
-                    <Link to={`/explore-course/${enrollCourse["_id"]}`}>
+                    <Link to={`/my-course/${enrollCourse.course["_id"]}`}>
                       <button className="btn btn-success text-white text-[14px] ">
                         Continue
                       </button>

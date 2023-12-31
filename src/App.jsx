@@ -7,10 +7,11 @@ import CategoryCoursePage from "./pages/CategoryCoursePage.jsx";
 import CourseDetailsPage from "./pages/CourseDetailsPage.jsx";
 import ForgetPasswordPage from "./pages/ForgetPasswordPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import LessonModulePage from "./pages/LessonModulePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import RegistrationPage from "./pages/RegistrationPage.jsx";
+import ModuleExplorePage from "./pages/ModuleExplorePage.jsx";
+import LessonModule from "./components/lessonModule/LessonModule.jsx";
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
-        <Route path="/my-course" element={<LessonModulePage />} />
+        <Route path="/my-course/:id" element={<ModuleExplorePage />} />
+        <Route path="/videos" element={<LessonModule />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/course-details/:id" element={<CourseDetailsPage />} />
         <Route
