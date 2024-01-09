@@ -10,15 +10,15 @@ const ModuleExplorePage = () => {
   useEffect(() => {
     (async () => {
       let result = await GET_ENROLLD_MODULE_API_REQUEST(id);
-      setData(result);
+      setData(result[0]?.course);
     })();
   }, []);
-  // console.log(data[0].course[0].title)
+
   return (
     <div className="bg-[#f5f1eb] md:p-10 p-5 h-screen">
       <CourseTitle
-        // title={data[0].course[0].title}
-        // image={data[0].course[0]?.thumbnail.map((url)=>url.url)}
+          title={data.map((item)=>item.title)}
+          image={data.map((item)=>item.thumbnail.map((url)=>url.url))}
       />
       <Resource />
     </div>

@@ -2,8 +2,9 @@ import axios from "axios";
 import { ErrorToast, SuccessToast } from "../utility/FormHelper";
 import { getToken, setToken, setUserDetails } from "../utility/SessionHelper";
 
-// const BASE_URL = `https://edujar-lms-server.onrender.com/api/v1`;
-const BASE_URL = `https://e-learning-server-three.vercel.app/api/v1`;
+const BASE_URL = `https://edujar-lms-server.onrender.com/api/v1`;
+// const BASE_URL = `https://e-learning-server-three.vercel.app/api/v1`;
+// const BASE_URL = `https://lms-server-an8u.onrender.com/api/v1`;
 // const BASE_URL = `http://localhost:8000/api/v1`;
 const Headers = { headers: { token: getToken() } };
 
